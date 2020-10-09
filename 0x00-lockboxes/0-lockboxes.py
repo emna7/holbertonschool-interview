@@ -1,19 +1,25 @@
 #!/usr/bin/python3
-"""unlock boxes"""
-
 def canUnlockAll(boxes):
-    """a method that determines if all the boxes can be opened"""
-    if not isinstance(boxes, list) or not len(boxes):
+    """check if all boxes can be opened"""
+    try:
+        keys = [0] + [i for i in boxes[0]]
+    except:
         return False
-    else:
-        len = len(boxes)
-    keys = [0]
-    for i in keys:
-        for value in boxes[i]:
-            if value not in keys:
-                if value != i and value != 0 and value < len:
-                    keys.append(value)
-    if len(keys) == len:
-        return True
-    else:
-        return False
+    can_unlock = [False for i in boxes]
+    try:
+        for i in range(len(boxes)):
+            if can_unlock[i] is False or i == 0:
+                if i in keys:
+                    can_unlock[i] = True
+                    for k in boxes[i]:
+                        if k not in keys:
+                            keys += [k]
+                    for j in boxes[i]:
+                        for k in boxes[j]:
+                            if k not in keys:
+                                keys += [k]
+                else:
+                    can_unlock[i] = False
+    except:
+        pass
+    return all(can_unlock)
