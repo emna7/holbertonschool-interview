@@ -14,9 +14,7 @@ int j = 0;
 int x = 0;
 int y = 0;
 char c;
-
 size = pow(3, level);
-
 while (i < size)
 {
 for (j = 0 ; j < size;)
