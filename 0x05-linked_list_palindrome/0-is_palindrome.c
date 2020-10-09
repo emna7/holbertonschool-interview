@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stddef.h>
 /**
 * is_palindrome - checks if a singly list is palindrome
 * @head: double pointer to the head
