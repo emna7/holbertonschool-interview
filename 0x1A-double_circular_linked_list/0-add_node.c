@@ -1,5 +1,4 @@
 #include "list.h"
-
 /**
 * add_node_end - function that adds a node at the end
 *of a list
@@ -30,7 +29,6 @@ tmp->prev = newNode;
 }
 return (newNode);
 }
-
 /**
 * add_node_begin - function that adds new node at the
 *beginning of a double circular list
