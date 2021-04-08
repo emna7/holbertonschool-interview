@@ -2,6 +2,8 @@
 """
 pascals triangle
 """
+
+
 def pascal_triangle(n):
     """
     Returns a list of integers representing Pascal's triangle
@@ -9,7 +11,7 @@ def pascal_triangle(n):
     arr = [[] for x in range(0, n)]
     for x in range(0, n):
         for y in range(x+1):
-            if ( y < x):
+            if (y < x):
                 if (y <= 0):
                     arr[x].append(1)
                 else:
